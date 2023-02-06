@@ -1,15 +1,13 @@
 [tool.poetry]
-name = "begrep-indekser"
+name = "teamkatalog-bigquery-naisjob"
 version = "0.1.0"
 description = ""
-authors = ["Erik Vattekar <erik.vattekar@nav.no>"]
+authors = ["Roy Grini <roy.grini@nav.no>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-jira-commonmark = "^0.1.8"
 requests = "^2.27.1"
 backoff = "^1.11.1"
-elasticsearch = "7.13.4"
 nav_dcat = "^1"
 
 [tool.poetry.dev-dependencies]
