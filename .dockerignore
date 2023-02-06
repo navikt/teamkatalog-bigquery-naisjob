@@ -1,0 +1,6 @@
+*
+!pyproject.toml
+!main.py
+!jira.py
+!es.py
+!services

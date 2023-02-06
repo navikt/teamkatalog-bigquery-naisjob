@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "begrep-indekser"
+version = "0.1.0"
+description = ""
+authors = ["Erik Vattekar <erik.vattekar@nav.no>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+jira-commonmark = "^0.1.8"
+requests = "^2.27.1"
+backoff = "^1.11.1"
+elasticsearch = "7.13.4"
+nav_dcat = "^1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,23 @@
+apiVersion: nais.io/v1
+kind: Naisjob
+metadata:
+  labels:
+    team: org
+    app: teamkatalog-bigquery-naisjob
+  name: teamkatalog-bigquery-naisjob
+  namespace: org
+spec:
+  image: {{ image }}
+  ttlSecondsAfterFinished: 340
+  backoffLimit: 2
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  schedule: '50 5,11,17,23 * * *'
+  env:
+    - name: TEAMKATALOG_URL
+      value: https://teamkatalog-api.prod-fss-pub.nais.io
+  vault:
+    enabled: true
+    paths:
+      - kvPath: /org/teamkatalog-bigquery-naisjob
+        mountPath: /var/run/secrets/nais.io/vault

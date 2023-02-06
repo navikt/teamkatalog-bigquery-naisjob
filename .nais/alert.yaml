@@ -1,0 +1,20 @@
+apiVersion: nais.io/v1
+kind: Alert
+metadata:
+  name: teamkatalog-bigquery-naisjob
+  namespace: org
+  labels:
+    team: org
+    app: teamkatalog-bigquery-naisjob
+spec:
+  receivers:
+    slack:
+      channel: '#teamkatalog-bigquery-naisjob'
+      prependText: '<!here> | '
+  alerts:
+    - alert: Naisjob feiler
+      description: Naisjob teamkatalog-bigquery-naisjob feiler i namespace org
+      expr: 'kube_job_failed{job_name=~"^teamkatalog-bigquery-naisjob.*", namespace="org"} > 0'
+      for: 1m
+      action: "Se logger på https://logs.adeo.no -> søk etter `pod:teamkatalog-bigquery-naisjob* AND namespace:org`, repo: https://github.com/navikt/teamkatalog-bigquery-naisjob"
+      severity: danger
