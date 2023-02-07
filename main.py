@@ -58,7 +58,7 @@ class AreaType(enum.Enum):
 
 
 df_productarea = pd.DataFrame()
-url = 'https://teamkatalog-api.nais.adeo.no/productarea'
+url = 'https://teamkatalog-api.prod-fss-pub.nais.io/productarea'
 r = requests.get(url, headers=headers)
 content = r.json()['content']
 normalized = json_normalize(content)
@@ -110,7 +110,8 @@ df_productarea.columns = df_productarea.columns.str.replace('.', '_')
 
 
 df_teams = pd.DataFrame()
-url = 'https://teamkatalog-api.nais.adeo.no/team'
+#url = 'https://teamkatalog-api.nais.adeo.no/team'
+url = 'https://teamkatalog-api.prod-fss-pub.nais.io/team'
 r = requests.get(url, headers=headers)
 content = r.json()['content']
 normalized = json_normalize(content)
