@@ -13,6 +13,7 @@ spec:
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   schedule: '50 5,11,17,23 * * *'
+#  schedule: '2 * * * *'
   env:
     - name: TEAMKATALOG_URL
       value: https://teamkatalog-api.prod-fss-pub.nais.io
