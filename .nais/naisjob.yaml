@@ -20,5 +20,5 @@ spec:
   vault:
     enabled: true
     paths:
-      - kvPath: /org/teamkatalog-bigquery-naisjob
+      - kvPath: secret/org/teamkatalog-bigquery-naisjob
         mountPath: /var/run/secrets/nais.io/vault
