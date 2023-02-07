@@ -58,7 +58,7 @@ class AreaType(enum.Enum):
 
 
 df_productarea = pd.DataFrame()
-url = 'https://teamkatalog-api.prod-fss-pub.nais.io/productarea'
+url = 'https://teamkatalog-api.nais.adeo.no/productarea'
 r = requests.get(url, headers=headers)
 content = r.json()['content']
 normalized = json_normalize(content)
@@ -110,8 +110,8 @@ df_productarea.columns = df_productarea.columns.str.replace('.', '_')
 
 
 df_teams = pd.DataFrame()
-#url = 'https://teamkatalog-api.nais.adeo.no/team'
-url = 'https://teamkatalog-api.prod-fss-pub.nais.io/team'
+url = 'https://teamkatalog-api.nais.adeo.no/team'
+#url = 'https://teamkatalog-api.prod-fss-pub.nais.io/team'
 r = requests.get(url, headers=headers)
 content = r.json()['content']
 normalized = json_normalize(content)
@@ -158,7 +158,6 @@ df_teams.columns = df_teams.columns.str.replace('.', '_')
 #Navn på prosjekt og dataset som definert i BigQuery
 project_id = 'org-prod-1016'
 dataset = 'teamkatalogen'
-
 
 client = bigquery.Client(project=project_id)
 
