@@ -1,4 +1,4 @@
-
+import os
 import pandas as pd
 import requests
 
@@ -8,6 +8,10 @@ from pandas import json_normalize
 import enum
 
 from google.cloud import bigquery
+
+print(os.environ)
+google_secret=os.environ['GOOGLE_APPLICATION_CREDENTIALS']
+print(google_secret)
 
 # Options
 pd.set_option('display.max_rows', 500)
