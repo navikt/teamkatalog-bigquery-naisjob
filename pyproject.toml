@@ -6,7 +6,7 @@ authors = ["Roy Grini <roy.grini@nav.no>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-requests = "^2.27.1"
+requests = "^2.32.3"
 backoff = "^1.11.1"
 nav_dcat = "^1"
 pandas = "^1.5.3"
