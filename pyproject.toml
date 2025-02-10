@@ -10,7 +10,7 @@ requests = "^2.27.1"
 backoff = "^1.11.1"
 nav_dcat = "^1"
 pandas = "^1.5.3"
-google_cloud_bigquery = "^3.5.0"
+google_cloud_bigquery = "^3.29.0"
 pyarrow = "^11.0.0"
 
 [tool.poetry.dev-dependencies]
