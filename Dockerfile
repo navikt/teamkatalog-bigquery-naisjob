@@ -6,9 +6,7 @@ USER root
 #RUN apt-get update -y && apt-get install -y curl && \
 #    curl -sSL https://install.python-poetry.org | python3 -
 
-RUN python3 -m pip install --user pipx && \
-  python3 -m pipx ensurepath && \
-  pipx install poetry==1.8.4
+RUN pip install poetry==1.8.4
 
 COPY . .
 
