@@ -26,7 +26,7 @@ jobs:
         env:
           ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy prod
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-fss
           RESOURCE: .nais/naisjob.yaml,.nais/alert.yaml
