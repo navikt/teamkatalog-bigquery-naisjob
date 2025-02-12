@@ -5,18 +5,17 @@ description = ""
 authors = ["Roy Grini <roy.grini@nav.no>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.13"
 requests = "^2.32.3"
 backoff = "^2.2.1"
 nav_dcat = "^1"
 pandas = "^1.5.3"
 google_cloud_bigquery = "^3.29.0"
 pyarrow = "^14.0.1"
-certifi = "^2024.07.04"
-urllib3 = "^1.26.7"
+certifi = "^2025.1.31"
+urllib3 = "^2.3.0"
 idna = "^3.7"
-
-[tool.poetry.dev-dependencies]
+pydantic="^1.10.13"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

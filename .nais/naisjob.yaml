@@ -12,14 +12,11 @@ spec:
   backoffLimit: 2
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
-  schedule: '50 5,11,17,23 * * *'
-#  schedule: '2 * * * *'
+#  schedule: '50 5,11,17,23 * * *'
+  schedule: '*/5 * * * *'
   webproxy: true
   env:
     - name: GOOGLE_APPLICATION_CREDENTIALS
       value: /var/run/secrets/nais.io/vault/GOOGLE_APPLICATION_CREDENTIALS
   vault:
     enabled: true
-#    paths:
-#      - kvPath: secret/org/teamkatalog-bigquery-naisjob
-#        mountPath: /var/run/secrets/nais.io/vault
