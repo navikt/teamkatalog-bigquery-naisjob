@@ -11,7 +11,7 @@ backoff = "^1.11.1"
 nav_dcat = "^1"
 pandas = "^2.2.3"
 google_cloud_bigquery = "^3.5.0"
-pyarrow = "^11.0.0"
+pyarrow = "^19.0.0"
 
 
 [tool.poetry.dev-dependencies]
