@@ -1,4 +1,4 @@
-FROM navikt/python:3.11
+FROM navikt/python:3.13
 
 USER root
 
