@@ -5,27 +5,26 @@ on:
     branches:
       - main
 
-env:
-  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
-
 jobs:
   build:
     name: build and push docker container
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Build and push docker image
-        env:
-          GH_USER: ${{ github.actor }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo ${GH_TOKEN} | docker login ghcr.io --username ${GH_USER} --password-stdin
-          docker build -t ${IMAGE} .
-          docker push ${IMAGE}
+      - name: Build and push Docker image
+        uses: nais/docker-build-push@v0
+        id: docker-build-push
+        with:
+          team: org
+          salsa: false
       - name: Deploy prod
         uses: nais/deploy/actions/deploy@v1
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-fss
           RESOURCE: .nais/naisjob.yaml,.nais/alert.yaml
+          VAR: image=${{ steps.docker-build-push.outputs.image }}
+          TELEMETRY: ${{ steps.docker-build-push.outputs.telemetry }}
